@@ -1,0 +1,93 @@
+<!--tally.wxml-->
+<view class='tallyHead'>记一笔</view>
+
+<view class='tallyInfo'>
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class='tallyNickName'>  
+    {{userInfo.nickName}}
+    </view>
+     <view class='moneryView' style='width: 50%;'>
+        <input class='monery' type='digit' placeholder='0.00'></input>
+     </view> 
+     <view style='clear:both'></view>
+</view>
+
+
+<view class='tallyInfo'>
+    <input class='basicInpt' style='font-size:50rpx; padding:10rpx 10rpx 10rpx 0rpx;height:70rpx;' placeholder='请输入记账信息'></input>
+    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>收支类型</view>
+    <radio-group class='block' style='font-size:23rpx;'>
+      <radio value="1" checked="true"/>支出
+      <radio value="2" />收入
+    </radio-group>
+    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>记账类型</view>
+    <radio-group class='block' style='font-size:23rpx;'>
+      <radio value="1" checked="true"/>餐饮
+      <radio value="2" />交通
+      <radio value="3" />住房
+      <radio value="4" />家装
+      <radio value="5" />其他
+    </radio-group>
+    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>是否需要报销</view>
+    <radio-group class='block' style='font-size:23rpx;'>
+      <radio value="1" checked="true"/>需要报销
+      <radio value="2" />不需要报销
+    </radio-group>
+    <textarea class='remark' placeholder='请输入备注信息（不超过140个字）'></textarea>
+    <view class="tui-picker-content">
+ <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>实际行为产生时间(点击时间重新选择)</view>
+ <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+ <view class="tui-picker-detail">
+  {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+ </view>
+ </picker>
+</view>
+</view>
+<view style='margin:0rpx 20rpx 20rpx 20rpx;flex:3;'>
+<button bindtap='chooseImageTap' class='thBut' style='display:inline-block'  hover-class='butAc'>附带图片提交</button>
+  <button class='thBut' style='display:inline-block;margin:0rpx 2% 0rpx 2%'  hover-class='butAc'>不带图片提交</button>
+  <button class='thBut' style='display:inline-block'  hover-class='butAc'>取消返回首页</button>
+</view>
+
+<template name="calculator-key">
+  <button hover-start-time="{{5}}" hover-stay-time="{{20}}" hover-class="calculator-key-hover" data-key="{{className}}" class="calculator-key {{className}}">{{display}}</button>
+</template>
+
+<view class="calculator">
+  <view class="calculator-display">
+    <view class="calculator-display-text">{{displayValue}}</view>
+  </view>
+  <view class="calculator-keypad">
+    <view class="input-keys">
+      <view class="function-keys" catchtap="onTapFunction">
+        <template is="calculator-key" data="{{className: 'key-clear', display: clearDisplay ? 'C' : 'AC'}}"/>
+        <template is="calculator-key" data="{{className: 'key-sign', display: '±'}}"/>
+        <template is="calculator-key" data="{{className: 'key-percent', display: '%'}}"/>
+      </view>
+      <view class="digit-keys" catchtap="onTapDigit">
+        <template is="calculator-key" data="{{className: 'key-0', display: '0'}}"/>
+        <template is="calculator-key" data="{{className: 'key-dot', display: '●'}}"/>
+        <template is="calculator-key" data="{{className: 'key-1', display: '1'}}"/>
+        <template is="calculator-key" data="{{className: 'key-2', display: '2'}}"/>
+        <template is="calculator-key" data="{{className: 'key-3', display: '3'}}"/>
+        <template is="calculator-key" data="{{className: 'key-4', display: '4'}}"/>
+        <template is="calculator-key" data="{{className: 'key-5', display: '5'}}"/>
+        <template is="calculator-key" data="{{className: 'key-6', display: '6'}}"/>
+        <template is="calculator-key" data="{{className: 'key-7', display: '7'}}"/>
+        <template is="calculator-key" data="{{className: 'key-8', display: '8'}}"/>
+        <template is="calculator-key" data="{{className: 'key-9', display: '9'}}"/>
+      </view>
+    </view>
+    <view class="operator-keys" catchtap="onTapOperator">
+        <template is="calculator-key" data="{{className: 'key-divide', display: '÷'}}"/>
+        <template is="calculator-key" data="{{className: 'key-multiply', display: '×'}}"/>
+        <template is="calculator-key" data="{{className: 'key-subtract', display: '−'}}"/>
+        <template is="calculator-key" data="{{className: 'key-add', display: '+'}}"/>
+        <template is="calculator-key" data="{{className: 'key-equals', display: '='}}"/>
+    </view>
+  </view>
+</view>
+
+<view class='foot'>
+  <text>该小程序仅供私人家庭使用|By 洋小洋℡</text>
+</view>
