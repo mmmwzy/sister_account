@@ -1,34 +1,40 @@
 <!--index.wxml-->
-<view class="container">
+<view class='assetInfo'>
   <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block wx:else>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       </block>
   </view>
+  
+  <p class='asseTextBlock'>家庭净资产(元)</p>
+  <p class='asseTextBlockBig'>¥ {{bookBalance}}</p>
+  <p class='asseText'style='float:left'>对账金额(元):¥0.00</p>
+  <p class='asseText' style='float:right;padding-right:20rpx;'>对账时间:1971-01-01</p>
+  <view style='clear:both'></view>
+  <p class='asseText'style='float:left'>对账状态:正常</p>
+  <p class='asseText' style='float:right;padding-right:20rpx;'>对账差额:+0.00</p>
+  <view style='clear:both'></view>
 </view>
-<view class='assetInfo'>
-    <p class='asseTextBlock'>家庭净资产(元)</p>
-    <p class='asseTextBlockBig'>¥ 1280.00</p>
-    <p class='asseText'style='float:left'>对账金额(元):¥1280.00</p>
-    <p class='asseText' style='float:right;padding-right:20rpx;'>对账时间:2018-04-22</p>
-    <view style='clear:both'></view>
-    <p class='asseText'style='float:left'>对账状态:正常</p>
-    <p class='asseText' style='float:right;padding-right:20rpx;'>对账差额:+0.00</p>
-    <view style='clear:both'></view>
-</view>
-<button class='addBut' hover-class='butAc' bindtap='addTallyView'>记一笔账</button>
-<view style='margin:0rpx 20rpx 20rpx 20rpx;flex:3;'>
-  <button class='thBut' style='display:inline-block'  hover-class='butAc'>我的审核</button>
-  <button class='thBut' style='display:inline-block;margin:0rpx 2% 0rpx 2%'  hover-class='butAc'>我的报销</button>
-  <button class='thBut' style='display:inline-block'  hover-class='butAc'>我的记账</button>
-</view>
+  <button class='addBut' hover-class='butAc' bindtap='addTallyView'>记一笔账</button> 
 
-<view class='billDetail'>
-  <text class='billDetailHeadText'>账单明细</text>
-</view>
 <view class='billDetail' style='padding-bottom:15rpx;'>
-  <view class='billListLi'>
+  <view class='billListLi' wx:for="{{billList}}">
+    <view class='billDeatilLiImg'>
+      <image src='/pages/image/b_l_{{item.billContextType}}.png'></image>
+    </view>
+    <view class='billDeatilLiTextLeft'>
+      <p class='billListLiTitle'>{{item.billDescribe}}</p>
+      <p class='billListLiUser'>{{item.billUserName}}</p>
+    </view>
+     <view class='billDeatilLiTextRight'>
+      <text class='billListLiMoneyRed'  wx:if="{{item.billType == 1}}">¥{{item.billAmount}}</text>
+      <text class='billListLiMoneyGree'  wx:else>¥{{item.billAmount}}</text>
+      <text class='billListLiTime'>{{item.billDataView}}</text>
+    </view> 
+    <view style='clear:both'></view>
+  </view>
+  <!-- <view class='billListLi'>
     <text class='billListLiTitle'>购买生活用品</text>
     <text class='billListLiMoney'>¥180.00</text>
     <view style='clear:both'></view>
@@ -99,23 +105,12 @@
     <text class='billListLiUser'>马文斌</text>
     <text class='billListLiTime'>2018-04-22 18:00</text>
     <view style='clear:both'></view>
-  </view>
-  <view class='billListLi'>
-    <text class='billListLiTitle'>购买生活用品</text>
-    <text class='billListLiMoney'>¥180.00</text>
-    <view style='clear:both'></view>
-    <text class='billListLiUser'>马文斌</text>
-    <text class='billListLiTime'>2018-04-22 18:00</text>
-    <view style='clear:both'></view>
-  </view>
+  </view> -->
 </view>
-<view class='page' style=''>
-  <text style='margin-right:15rpx'>首页</text>
-  <text style='margin-right:15rpx'>上一页</text>
-  <text style='margin-right:15rpx'>1/20</text>
-  <text style='margin-right:15rpx'>下一页</text>
-  <text style='margin-right:15rpx'>末页</text>
-</view>
-<view class='foot'>
-  <text>该小程序仅供私人家庭使用|By 洋小洋℡</text>
-</view>
+ <view class='page' style=''>
+  <view style='margin-right:15rpx;display:inline' bindtap="firstPage">首页</view>
+  <view style='margin-right:15rpx;display:inline' bindtap='lastPage'>上一页</view>
+  <view style='margin-right:15rpx;display:inline'>{{pageNo}}/{{pageCount}}</view>
+  <view style='margin-right:15rpx;display:inline' bindtap='nextPage'>下一页</view>
+  <view style='margin-right:15rpx;display:inline' bindtap='endPage'>末页</view>
+</view> 

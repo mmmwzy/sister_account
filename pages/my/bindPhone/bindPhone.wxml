@@ -1,0 +1,16 @@
+<!--pages/my/bindPhone/bindPhone.wxml-->
+<view class='bindview'>
+  <view class='title'>绑定手机号</view>
+  <view class='rowView'>
+    <view class='textLeft'>手机号</view>
+    <input class='phone' placeholder='请输入手机号' bindchange='setUserPhone'></input>
+    <view style='clear:both'></view>
+  </view>
+  <view class='rowView'>
+    <input class='phone' placeholder='请输入验证码' style='width:200px;margin-left:11px' bindblur='setPhoneCode'></input>
+    <button class='butCode' bindtap='getVerificationCode' disabled='{{codeButDis}}'>{{codeButText}}</button>
+    <view style='clear:both'></view>
+  </view>
+</view>
+<button class='addBut' hover-class='butAc' bindtap='bindPhone'>提交</button> 
+<text class='bottomText'>该绑定手机号将用于报销申请通知，审核发起通知等通知短信下发！请谨慎填写！</text>

@@ -1,6 +1,6 @@
 /**app.wxss**/
 page {
-  background-color: #434343;
+  background-color: #F0E7FA;
 }
 .container {
   height: 100%;
@@ -10,10 +10,11 @@ page {
   justify-content: space-between;
   padding: 20rpx 0rpx 0rpx 0rpx;
   box-sizing: border-box;
-  background-color: #fce566;
+  background-color: #f1f0fa;
   color: #434343;
-  margin: 0rpx 20rpx 0rpx 20rpx;
+  /* margin: 0rpx 20rpx 0rpx 20rpx; */
   padding-bottom: 30rpx;
+  
 } 
 
 .inline-block {

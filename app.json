@@ -1,13 +1,55 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/my/bindPhone/bindPhone",
+    "pages/my/my",
     "pages/index/index",
     "pages/tally/tally",
+    "pages/login/reg/reg",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我的小账",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "姐妹花记账",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#4831bd",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/image/zhangben2.png",
+        "iconPath": "pages/image/zhangben.png",
+        "pagePath": "pages/index/index",
+        "text": "账本"
+      },
+      {
+        "selectedIconPath": "pages/image/shenhe2.png",
+        "iconPath": "pages/image/shenhe.png",
+        "pagePath": "pages/logs/logs",
+        "text": "审核"
+      },
+      {
+        "selectedIconPath": "pages/image/baoxiao2.png",
+        "iconPath": "pages/image/baoxiao.png",
+        "pagePath": "pages/logs/logs",
+        "text": "报销"
+      },
+      {
+        "selectedIconPath": "pages/image/jizhang2.png",
+        "iconPath": "pages/image/jizhang.png",
+        "pagePath": "pages/logs/logs",
+        "text": "记账"
+      },
+      {
+        "selectedIconPath": "pages/image/my2.png",
+        "iconPath": "pages/image/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
   }
 }

@@ -34,6 +34,40 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token: '',
+    serviceBase: 'https://www.mie-value.com/mie_sister_account'
+    // serviceBase: 'http://127.0.0.1:10300'
+  },
+  toFix: function (value, count) {
+    var num = Number(value)
+    return num.toFixed(count)
+  },
+  validateToken: function(res){
+    if (res.data.code == '1407'){
+      wx.showModal({
+        title: '提示',
+        content: res.data.msg + "点击确定跳往登陆页面",
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            wx.redirectTo({
+              url: '/pages/login/login'　// 页面 A
+            })
+          }
+        }
+      })
+    }
+  },
+  gloadTipNoNext: function(msg){
+    wx.showModal({
+      title: '提示',
+      content: msg,
+      showCancel: false,
+      success: function (res) {
+        if (res.confirm) {
+        }
+      }
+    })
   }
 })

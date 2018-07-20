@@ -1,0 +1,11 @@
+<!--pages/login/reg/reg.wxml-->
+<view class='imgView'>
+  <block>
+    <image src='/pages/image/logo.jpg' style='border-radius:50%;'></image>
+  </block>
+</view>
+<view class='form'>
+  <input class='userName' id='userName' placeholder='请输入姓名/昵称' value="{{userName}}" bindinput="listenerUserName"></input>
+  <input class='alipay' id='alipay' placeholder='请输入支付宝账号' value="{{alipay}}" bindinput="listenerAlipay"></input>
+  <button bindtap='reg'>使用微信注册</button>
+</view>

@@ -7,33 +7,34 @@
     {{userInfo.nickName}}
     </view>
      <view class='moneryView' style='width: 50%;'>
-        <input class='monery' type='digit' placeholder='0.00'></input>
+        <input class='monery' type='digit' value='{{billAmount}}' bindblur="billAmountChange" placeholder='0.00'></input>
      </view> 
      <view style='clear:both'></view>
 </view>
 
 
 <view class='tallyInfo'>
-    <input class='basicInpt' style='font-size:50rpx; padding:10rpx 10rpx 10rpx 0rpx;height:70rpx;' placeholder='请输入记账信息'></input>
+    <input class='basicInpt' style='font-size:50rpx; padding:10rpx 10rpx 10rpx 0rpx;height:70rpx;' placeholder='请输入记账信息' bindchange="billDescribeChange"></input>
     <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>收支类型</view>
-    <radio-group class='block' style='font-size:23rpx;'>
+    <radio-group class='block' style='font-size:23rpx;' bindchange="billTypeRadioChange">
       <radio value="1" checked="true"/>支出
       <radio value="2" />收入
     </radio-group>
-    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>记账类型</view>
-    <radio-group class='block' style='font-size:23rpx;'>
+    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;' >记账类型</view>
+    <radio-group class='block' style='font-size:23rpx;' bindchange="billContextTypeRadioChange">
       <radio value="1" checked="true"/>餐饮
       <radio value="2" />交通
       <radio value="3" />住房
       <radio value="4" />家装
       <radio value="5" />其他
+      <radio value="6" />公共资金
     </radio-group>
-    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>是否需要报销</view>
-    <radio-group class='block' style='font-size:23rpx;'>
-      <radio value="1" checked="true"/>需要报销
-      <radio value="2" />不需要报销
+    <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;' >是否需要报销</view>
+    <radio-group class='block' style='font-size:23rpx;'bindchange="billDispatchTypeRadioChange">
+      <radio value="0" checked="true"/>不需要报销
+      <radio value="1" />需要报销
     </radio-group>
-    <textarea class='remark' placeholder='请输入备注信息（不超过140个字）'></textarea>
+    <textarea class='remark' placeholder='请输入备注信息（不超过140个字）' value='{{billRemark}}'bindblur="billRemarkChange"></textarea>
     <view class="tui-picker-content">
  <view style='font-size:24rpx;margin-bottom:10rpx;margin-top:10rpx;'>实际行为产生时间(点击时间重新选择)</view>
  <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
@@ -44,9 +45,9 @@
 </view>
 </view>
 <view style='margin:0rpx 20rpx 20rpx 20rpx;flex:3;'>
-<button bindtap='chooseImageTap' class='thBut' style='display:inline-block'  hover-class='butAc'>附带图片提交</button>
-  <button class='thBut' style='display:inline-block;margin:0rpx 2% 0rpx 2%'  hover-class='butAc'>不带图片提交</button>
-  <button class='thBut' style='display:inline-block'  hover-class='butAc'>取消返回首页</button>
+<button bindtap='imgSave' class='thBut' style='display:inline-block'  hover-class='butAc'>附带图片提交</button>
+  <button class='thBut' style='display:inline-block;margin:0rpx 2% 0rpx 2%'  hover-class='butAc' bindtap='noImgSave'>不带图片提交</button>
+  <button class='thBut' style='display:inline-block'  hover-class='butAc' bindtap="toZhang">取消返回账本</button>
 </view>
 
 <template name="calculator-key">
@@ -88,6 +89,29 @@
   </view>
 </view>
 
-<view class='foot'>
-  <text>该小程序仅供私人家庭使用|By 洋小洋℡</text>
-</view>
+<!-- <view class='foot'>
+  <view class='footView zhangben ckeck'>
+    <image src='/pages/image/zhangben.png'></image>
+    <view style='margin-top:-5px;'>
+      <text>账本</text>
+    </view>
+  </view>
+  <view class='footView shenhe'>
+    <image src='/pages/image/shenhe.png'></image>
+    <view style='margin-top:5px;'>
+      <text>审核</text>
+    </view>
+  </view>
+  <view class='footView baoxiao'>
+    <image src='/pages/image/baoxiao.png'></image>
+    <view style='margin-top:-5px;'>
+      <text>报销</text>
+    </view>
+  </view>
+  <view class='footView jizhang'>
+    <image src='/pages/image/jizhang.png'></image>
+    <view style='margin-top:-5px;'>
+      <text>记账</text>
+    </view>
+  </view>
+</view> -->

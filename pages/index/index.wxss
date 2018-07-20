@@ -3,22 +3,24 @@
   display: inline-block;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+  float: right;
+
 }
 
 .assetInfo {
   height: 100%;
   /* flex-direction: column; */
-  padding: 20rpx 0;
-  background-color: #fce566;
-  color: #434343;
-  margin: 0rpx 20rpx 0rpx 20rpx;
+  padding: 70rpx 0 30rpx 15rpx;
+  background-color: #000022;
+  color: #FFFFDD;
+  background: linear-gradient(to bottom, #7940a9, #4831bd);
+  /* margin: 0rpx 20rpx 0rpx 0rpx; */
 }
 
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx 0rpx 0rpx 0rpx;
+   margin: 5rpx 50rpx 0rpx 0rpx; 
   border-radius: 50%;
 }
 
@@ -31,14 +33,15 @@
 .asseTextBlockBig {
   display: block;
   margin-left:30rpx;
-  margin-top:15rpx; 
-  margin-bottom: 15rpx;
+  margin-top:40rpx; 
+  margin-bottom: 50rpx;
   font-size: 50rpx;
 }
 
 .asseText {
   margin-left:30rpx;
   font-size: 28rpx;
+  margin-bottom: 20rpx;
 }
 
 .usermotto {
@@ -46,17 +49,20 @@
 }
 
 .addBut {
-  background-color: #fce566;
-  margin: 20rpx;
-  color: #434343;
+  background-color: #4831bd;
+  margin: 20rpx 0;
+  color: #FFFFDD;
+  -moz-box-shadow:2px 2px 10px #333333; 
+  -webkit-box-shadow:2px 2px 10px #333333; 
+  box-shadow:2px 2px 10px #333333;
 }
 
 .billDetail {
   height: 100%;
   padding: 20rpx 0rpx 0rpx 0rpx;
-  background-color: #fce566;
+  background-color: #f1f0fa;
   color: #434343;
-  margin: 0rpx 20rpx 0rpx 20rpx;
+  /* margin: 0rpx 20rpx 0rpx 20rpx; */
 }
 
 .billDetailHeadText{
@@ -70,59 +76,118 @@
 .billListLi {
   margin-left: 30rpx;
   margin-right: 20rpx;
-  padding-bottom: 1rpx;
-  border-bottom: 1px solid #b0a047;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #D5D5D5;
   margin-bottom: 15rpx;
   padding-top: 15rpx;
 }
 
-.billListLiTitle {
-  font-size: 30rpx;
+.billDeatilLiImg{
   float: left;
 }
+.billListLi image{
+  width: 45px;
+  height: 45px;
+}
 
-.billListLiMoney {
-  font-size: 30rpx;
+.billDeatilLiTextLeft{
+  float: left;
+  text-align: left;
+  margin-left: 20rpx;
+}
+.billDeatilLiTextRight{
   float: right;
+  text-align: right
+}
+
+.billListLiTitle {
+  font-size: 30rpx;
+  display: block;
+   /* float: left;  */
+}
+
+.billListLiMoneyRed {
+  font-size: 30rpx;
+  display: block;
   color: red;
 }
 
+.billListLiMoneyGree {
+  font-size: 30rpx;
+  display: block;
+  color: green;
+}
+
 .billListLiUser {
+  margin-top: 15rpx;
   font-size: 23rpx;
-  float: left;
+  display: block;
 }
 
 .billListLiTime {
+  margin-top: 15rpx;
   font-size: 23rpx;
-  float: right;
+  display: block;
 }
 
 .thBut {
-  background-color: #fce566;
-  color: #434343;
+  background-color: #654CE8;
+  color: #ffffff;
   width: 32%;
 }
 
 .page {
   height: 100%;
-  background-color: #fce566;
+  background-color: #f1f0fa;
   color: #434343;
-  margin: 0rpx 20rpx 20rpx 20rpx;
+  margin: 0rpx 0rpx 30rpx 0rpx;
   text-align: center;
-  padding:0rpx 20rpx 20rpx 0rpx;
+  padding:0rpx 20rpx 40rpx 0rpx;
   font-size:27rpx;
 }
 
-.foot {
-  height: 100%;
-  color: #7d7d7d;
-  margin: 20rpx 20rpx 20rpx 20rpx;
-  text-align: center;
-  padding:20rpx 20rpx 20rpx 0rpx;
-  font-size:27rpx;
+/* .foot {
+  background-color:#f1f0fa; 
+  z-index:999; 
+  position:fixed; 
+  bottom:0; 
+  left:0; 
+  width:100%;
 }
+ .footView{
+  float: left;
+  width: 25%;
+  padding: 15rpx 0 ;
+  text-align: center;
+  font-size: 26rpx;
+
+}
+
+.foot .shenhe image{
+  width: 27px;
+  height: 27px;
+}
+
+.foot .zhangben image{
+  width: 37px;
+  height: 37px;
+}
+
+.foot .baoxiao image{
+  width: 37px;
+  height: 37px;
+}
+
+.foot .jizhang image{
+  width: 37px;
+  height: 37px;
+}
+
+.foot .ckeck{
+  background-color: #DDDDDD;
+} */
 
 .butAc {
-  background-color: #a79842;
+  background-color: #7C64E0;
 }
 

@@ -1,7 +1,7 @@
 /**tally.wxss**/
 .tallyHead {
   text-align: center;
-  color: #fce566;
+  color: #4831bd;
   margin: 20rpx;
   font-size: 45rpx;
 }
@@ -19,7 +19,7 @@
   height: 100%;
   /* flex-direction: column; */
   padding: 20rpx 30rpx;
-  background-color: #fce566;
+  background-color: #f1f0fa;
   color: #434343;
   margin: 0rpx 20rpx 20rpx 20rpx;
 }
@@ -60,8 +60,8 @@
 }
 
 .thBut {
-  background-color: #fce566;
-  color: #434343;
+  background-color: #4831bd;
+  color: #FFFFDD;
   width: 32%;
   font-size: 28rpx;
 }
@@ -70,16 +70,6 @@
   color: #434343;
   font-size: 36rpx;
 }
-
-.foot {
-  height: 100%;
-  color: #7d7d7d;
-  margin: 20rpx 20rpx 20rpx 20rpx;
-  text-align: center;
-  padding:20rpx 20rpx 20rpx 0rpx;
-  font-size:27rpx;
-}
-
 .calculator {
   height: 100%;
   margin: 0rpx 0rpx 20rpx 20rpx;
@@ -119,7 +109,7 @@
 }
 
 .calculator-key {
-  background-color: #fce566;
+  background-color: #f1f0fa;
   color: #434343;
   display: block;
   width: 23.5vw;
@@ -151,7 +141,7 @@
 }
 
 .calculator .operator-keys .calculator-key {
-  color: white;
+  color: #4831bd;
   border-right: 0;
   font-size: 3em;
 }
@@ -172,4 +162,49 @@
   width: 25%;
 }
 
+page{
+  background-color: #F5F5F5
+}
 
+/* .foot {
+  background-color:#f1f0fa; 
+  z-index:999; 
+  position:fixed; 
+  bottom:0; 
+  left:0; 
+  width:100%;
+}
+ .footView{
+  float: left;
+  width: 25%;
+  padding: 15rpx 0 ;
+  text-align: center;
+  font-size: 26rpx;
+
+}
+
+.foot .shenhe image{
+  width: 27px;
+  height: 27px;
+}
+
+.foot .zhangben image{
+  width: 37px;
+  height: 37px;
+}
+
+.foot .baoxiao image{
+  width: 37px;
+  height: 37px;
+}
+
+.foot .jizhang image{
+  width: 37px;
+  height: 37px;
+}
+
+.foot .ckeck{
+  background-color: #DDDDDD;
+}
+
+ */

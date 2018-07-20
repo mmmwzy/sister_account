@@ -18,7 +18,108 @@ Page({
     value: null, // 上次计算后的结果，null表示没有上次计算的结果
     displayValue: '0', // 显示数值
     operator: null, // 上次计算符号，null表示没有未完成的计算
-    waitingForOperand: false // 前一按键是否为计算符号
+    waitingForOperand: false, // 前一按键是否为计算符号
+    billType: '1', //收支类型
+    billContextType: '1', //记账类型
+    billDispatchType: '0', //是否需要报销
+    billAmount: '', //账单金额
+    billRemark: '', //账单备注
+    billDescribe: '' // 账单描述
+  },
+  imgSave:function(){
+    wx.showModal({
+      title: '提示',
+      content: "带图片提交功能暂未开放",
+      showCancel: false,
+      success: function (res) {
+      }
+    })
+  },
+  toZhang: function(){
+    wx.switchTab({
+      url: '/pages/index/index'　// 页面 A
+    })
+  },
+  noImgSave: function(){
+    var that = this
+    wx.request({
+      url: app.globalData.serviceBase + '/bill/service/create',
+      method: 'post',
+      data : {
+        "billAmount": that.data.billAmount == '' ? '0.00' : that.data.billAmount,
+        "billType": that.data.billType,
+        "billContextType": that.data.billContextType,
+        "billDispatchType": that.data.billDispatchType,
+        "billRemark": that.data.billRemark,
+        "billDataView": that.data.dateTimeArray1[0][that.data.dateTime1[0]] + "-" + that.data.dateTimeArray1[1][that.data.dateTime1[1]] + "-" + that.data.dateTimeArray1[2][that.data.dateTime1[2]] + " " + that.data.dateTimeArray1[3][that.data.dateTime1[3]] + ":" + that.data.dateTimeArray1[4][that.data.dateTime1[4]],
+        "billDescribe": that.data.billDescribe,
+      },
+      header: {
+        "Autoken": app.globalData.token
+      },
+      success: function(res){
+        app.validateToken(res);
+        if(res.data.code == '200'){
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false,
+            success: function (res) {
+              wx.switchTab ({
+                url: '/pages/index/index'　// 页面 A
+              })
+            }
+          })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+              }
+            }
+          })
+        }
+       
+      }
+    })
+  },
+  //账单备注输入框监听
+  billDescribeChange: function (e) {
+    this.setData({
+      billDescribe: e.detail.value
+    })
+  },
+  //账单备注输入框监听
+  billRemarkChange: function (e) {
+    this.setData({
+      billRemark: e.detail.value
+    })
+  },
+  //账单金额输入框监听
+  billAmountChange: function(e){
+    this.setData({
+      billAmount : app.toFix(e.detail.value, 2)
+    })
+  },
+  //收支类型单选框监听
+  billTypeRadioChange: function(e){
+    this.setData({
+      billType : e.detail.value
+    })
+  },
+  //记账类型单选框监听
+  billContextTypeRadioChange: function (e) {
+    this.setData({
+      billContextType : e.detail.value
+    })
+  },
+  //是否需要报销单选框监听
+  billDispatchTypeRadioChange: function (e) {
+    this.setData({
+      billDispatchType : e.detail.value
+    })
   },
   //事件处理函数
   bindViewTap: function() {

@@ -1,0 +1,27 @@
+/* pages/login/login.wxss */
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #F1F0FA;
+}
+
+.imgView {
+  width: 100%;
+  text-align: center;
+  padding-top: 50%;
+}
+
+image {
+  border-radius:50%;
+  height: 100px;
+  width: 100px;
+}
+
+.loadView{
+  margin-top: 10px;
+}
+
+.loadText{
+  font-size: 34rpx;
+  color: #434343;
+}

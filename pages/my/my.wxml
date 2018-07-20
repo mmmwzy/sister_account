@@ -1,0 +1,35 @@
+<!--pages/my/my.wxml-->
+<view class='assetInfo'>
+  <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      </block>
+  </view>
+  
+  <view class='myTitle' style=''>个人中心</view> 
+</view>
+<view class='infoView'>
+    <view class='infoRow' hover-class='infoRowHover'>
+      <text>姓名</text>
+      <image src='../image/right.png' ></image>
+      <p>
+        {{userName}}
+      </p>
+    </view>
+    <view class='infoRow' bindtap='userPhoneClick' hover-class='infoRowHover'>
+      <text>手机号</text>
+      <image src='../image/right.png' ></image>
+      <p>
+        {{userPhone}}
+      </p>
+    </view>
+    <view class='infoRow' hover-class='infoRowHover'>
+      <text>支付宝</text>
+      <image src='../image/right.png' ></image>
+      <p>
+        {{userAlipayAccount}}
+      </p>
+    </view>
+</view>
+

@@ -1,0 +1,57 @@
+/* pages/login/reg/reg.wxss */
+page {
+  height: 100%;
+  width: 100%;
+   background-color: #F1F0FA	; 
+  /* background-color: #FFFFFF	; */
+}
+
+
+.title {
+  text-align: center;
+  padding-top: 60%;
+}
+
+.title text {
+  color: #434343;
+  font-weight: 600;
+}
+
+.form {
+  width: 100%;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.form text {
+  color: #434343;
+  font-size: 34rpx;
+}
+
+.form input {
+  margin: 30rpx 80rpx;
+  border-bottom: 1px solid #DDDDDD; 
+  /* width: 93%; */
+   padding: 10rpx 0rpx; 
+  color: #434343;
+  font-size: 28rpx;
+}
+
+.form button {
+   background-color: #654CE8; 
+  margin: 70rpx 70rpx;
+  color: #ffffff;
+  border-color: white;
+}
+
+.imgView {
+  width: 100%;
+  text-align: center;
+  padding-top: 30%;
+}
+
+image {
+  border-radius:50%;
+  height: 100px;
+  width: 100px;
+}

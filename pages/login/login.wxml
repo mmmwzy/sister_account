@@ -1,0 +1,8 @@
+<view class='imgView'>
+  <block>
+    <image src='../image/logo.jpg' style='border-radius:50%;'></image>
+  </block>
+  <view class='loadView'>
+    <text class='loadText'>正在登陆</text>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+/* pages/my/bindPhone/bindPhone.wxss */
+.bindview{
+  height: 100%;
+  padding: 0rpx 0rpx 0rpx 0rpx;
+  background-color: #f1f0fa;
+  color: #434343;
+  font-size: 35rpx;
+}
+
+.title{
+  text-align: center;
+  padding: 15px;
+  font-size: 45rpx;
+  color: #FFFFDD;
+  background: linear-gradient(to bottom, #7940a9, #4831bd);
+}
+.rowView{
+  border-bottom: 1px solid #D5D5D5;
+  margin: 10px 10px 0 10px;
+  padding-bottom: 10px;
+}
+
+.textLeft{
+  float: left;
+  margin: 10px 20px 0 20px;
+  padding-right: 30px;
+}
+
+.phone{
+  float: left;
+  padding: 9px;
+  font-size: 35rpx;
+}
+
+.butCode{
+  float: right;
+  width: 140px;
+  background-color: #4831bd;
+  color: #FFFFDD;
+}
+
+.addBut {
+  background-color: #4831bd;
+  margin: 20rpx 0;
+  color: #FFFFDD;
+  -moz-box-shadow:2px 2px 10px #333333; 
+  -webkit-box-shadow:2px 2px 10px #333333; 
+  box-shadow:2px 2px 10px #333333;
+}
+
+.butAc {
+  background-color: #7C64E0;
+}
+
+.bottomText{
+  text-align: center;
+  font-size: 28rpx;
+  color: red
+}

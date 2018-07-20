@@ -1,0 +1,63 @@
+/* pages/my/my.wxss */
+.userinfo {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  /* float: right; */
+
+}
+
+.assetInfo {
+  height: 100%;
+  /* flex-direction: column; */
+  padding: 30rpx 0 30rpx 0rpx;
+  background-color: #000022;
+  color: #FFFFDD;
+  background: linear-gradient(to bottom, #7940a9, #4831bd);
+  text-align: center;
+  /* margin: 0rpx 20rpx 0rpx 0rpx; */
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+   /* margin: 5rpx 50rpx 0rpx 0rpx;  */
+  border-radius: 50%;
+}
+
+.myTitle {
+  margin-top: 15px;
+  font-size: 40rpx;
+}
+.infoView{
+  height: 100%;
+  padding: 0rpx 0rpx 0rpx 0rpx;
+  background-color: #f1f0fa;
+  color: #434343;
+}
+
+.infoRow{
+  padding: 25px 0 20px 30px;
+  font-size: 29rpx;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.infoRowHover{
+  background-color: #E6E6E6;
+}
+
+.infoRow image {
+  float: right;
+  height: 23px;
+  width: 23px;
+  margin-right: 10px;
+}
+
+.infoRow p {
+  float: right;
+  font-size: 29rpx;
+  margin-right: 10px;
+}
+/* .usermotto {
+  margin-top: 200px;
+} */
